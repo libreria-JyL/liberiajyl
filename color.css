@@ -1,0 +1,305 @@
+.rectangulo {
+    background-color: #448ee2; /* Color de fondo celeste */
+    padding: 20px;             /* Añade un poco de espacio interno (padding) */
+    width: 100%;               /* Ocupa todo el ancho de la pantalla */
+    text-align: center;         /* Centra el texto horizontalmente */
+    box-sizing: border-box;     /* Incluye el padding en el ancho total */
+    margin: 0;                 /* Elimina el margen para ocupar todo el ancho */
+}
+
+.texto-rec {
+    color: white;               /* Color del texto blanco */
+    font-size: 20px;            /* Tamaño de fuente para el texto */
+    margin: 5px 0;              /* Espacio entre las líneas de texto */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    background-color: #919191;
+    padding-left: 20px;
+    padding-right: 20px;   
+}
+
+button {
+    padding: 20px 20px;
+    font-size: 1px;
+    cursor: pointer;
+    background-color: #448ee2;    /* Color de fondo azul */
+    color: white;              /* Texto del botón blanco */
+    border: none;
+    border-radius: 5px;        /* Bordes redondeados */
+    margin-top: 30px;          /* Espacio fijo arriba */
+    margin-bottom: 10px;       /* Espacio fijo abajo */
+  
+}
+
+.dropdown-container {
+    position: absolute;
+    top: 229px;
+    z-index: 10000;
+    display: block;
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;       /* Borde más ancho (2px) */
+    border-radius: 15px;          /* Esquinas redondeadas */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    width: 120px;                 /* Ancho fijo para la lista */
+    
+    max-height: 0;                /* Altura inicial 0 para ocultar la lista */
+    overflow: hidden;             /* Oculta el contenido al colapsar */
+    transition: max-height 1s ease-out, border 1s ease-out; /* Transición más lenta (0.8s) */
+}
+
+.show {
+    max-height: 200px;  /* Altura máxima cuando se despliega (ajústala según el contenido) */
+}
+
+li {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;              /* Cambia el cursor para indicar que es interactivo */
+    border-radius: 15px;          /* Redondeamos los bordes de los elementos también */
+}
+
+li:hover {
+    background-color: #3498db;    /* Cambia a azul celeste en hover */
+    color: white;                 /* Cambia el texto a blanco */
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;      /* Centra horizontalmente */
+    align-items: center;          /* Alinea verticalmente todos los elementos */
+    margin-top: 5px;              /* Ajusta el margen superior */
+    width: 100%;                  /* Ocupa todo el ancho */
+}
+
+.logo {
+    width: 100px;                 /* Ajusta el tamaño del logo */
+    margin-right: 20px;           /* Espacio entre el logo y la nueva imagen */
+}
+
+.new-image {
+    width: 10px;                  /* Ajusta el tamaño de la nueva imagen */
+    height: auto;                 /* Mantiene la proporción de la imagen */
+    margin-right: 20px; 
+}
+
+.btn {
+    padding: 20px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #448ee2; /* Color de fondo azul */
+    color: white;              /* Texto del botón blanco */
+    border: none;
+    border-radius: 10px;        /* Bordes redondeados */
+    margin-top: -70px;         /* Ajusta este valor para subir el botón aún más */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;        /* Alinea la lupa y la barra de búsqueda verticalmente */
+    justify-content: flex-start; /* Alinea los elementos dentro del contenedor */
+    position: absolute;         /* Usa posición absoluta para colocar libremente el contenedor */
+    right: 0;                   /* Fija el contenedor al extremo derecho */
+    top: 160px;                  /* Ajusta la distancia desde la parte superior */
+    height: 50px;               /* Ajusta la altura del contenedor */
+    padding-right: 10px;        /* Añade un pequeño padding para separar del borde derecho */
+}
+
+.search-icon {
+    width: 50px;                /* Tamaño de la lupa */
+    height: 50px;               /* Ajusta la altura de la lupa */
+    cursor: pointer;            /* Cambia el cursor a "pointer" */
+    margin-right: 10px;     
+}
+
+.search-bar {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    height: 30px;               /* Ajusta la altura de la barra de búsqueda */
+    transition: width 0.4s ease, opacity 0.4s ease;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar.active {
+    width: 200px;
+    padding: 10px;
+    opacity: 1;
+    height: 30px;               /* Mantén la misma altura al expandir */
+}
+
+.basket-icon {
+    width: 50px;  /* Ajusta el ancho de la canasta */
+    height: 50px; /* Ajusta la altura de la canasta */
+}
+
+.slider {
+    width: 100vw;               /* Ocupa todo el ancho de la pantalla */
+    height: 300px;              /* Altura máxima ajustada a 300px */
+    margin: 20px 0;             /* Espacio vertical encima y debajo del slider */
+    overflow: hidden;           /* Oculta las imágenes que no están visibles */
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-start; /* Alinea las imágenes al principio */
+    background: #919191;        /* Color de fondo si no hay imágenes */
+}
+
+.slides {
+    display: flex;
+    gap: 30px;                  /* Espaciado de 30px entre las imágenes */
+    animation: slideAnimation 40s infinite linear; /* Animación más lenta y continua */
+}
+
+.slide {
+    flex-shrink: 0;             /* Las imágenes no se encogen */
+    width: auto;                /* Ajustamos el ancho de cada imagen */
+    height: 100%;               /* Ocupa toda la altura del contenedor */
+}
+
+.slide img {
+    width: auto;                /* Ancho automático para que las imágenes no se estiren */
+    max-height: 100%;           /* Limita la altura máxima */
+    object-fit: contain;        /* Las imágenes se ven completas sin recortes */
+    object-position: center;    /* Centra la imagen dentro del contenedor */
+}
+
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0); /* Comienza desde la posición inicial */
+    }
+    100% {
+        transform: translateX(-50%); /* Mueve todas las imágenes hacia la izquierda */
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 40px 0;
+}
+
+.producto-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaciado entre productos */
+    justify-content: space-between;
+}
+
+.producto {
+    flex: 1 1 23%; /* Asegura que solo haya 4 productos por fila */
+    max-width: 23%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+
+.producto img {
+    width: 100%;                 /* Imagen ocupa todo el ancho del producto */
+    height: auto;                /* Ajusta la altura automáticamente para mantener la proporción */
+    object-fit: contain;         /* Asegura que la imagen se ajuste sin recortarse */
+    transition: transform 0.5s;
+}
+
+.producto:hover img {
+    transform: scale(1.05);      /* Efecto de zoom leve al hacer hover */
+}
+
+
+.info-producto {
+    padding: 20px 30px;           /* Aumenta el padding para hacer el producto más largo */
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.producto button {
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    background-color: #448ee2;    /* Color de fondo del botón */
+    color: white;                 /* Color del texto */
+    border-radius: 5px;           /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.producto button:hover {
+    background-color: #005bb5;  
+    box-shadow: rgba(0, 0, 0, alpha);
+}
+
+.precio {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.info-producto button {
+    border: none;
+    padding: 15px 10px;
+}
+
+.boton-enlace {
+    display: inline-block;
+    padding: 15px 10px;
+    cursor: pointer;
+    background-color: #448ee2; /* Color de fondo */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-enlace:hover {
+    background-color: #005bb5;
+}
+
+/* Clase para ocultar productos que no coinciden con la búsqueda */
+.product-hidden {
+    display: none;
+}
+/* Ajustes exclusivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Cada producto ocupa el 100% del ancho en móviles */
+    .producto {
+        flex: 1 1 100%; /* Cambia a una sola columna */
+        max-width: 100%; /* Ocupa el ancho completo del contenedor */
+    }
+
+    /* Ajuste de padding y texto en la información del producto */
+    .info-producto {
+        padding: 10px 15px; /* Reduce el padding */
+    }
+
+    /* Tamaño de imagen y botón optimizado para móviles */
+    .producto img {
+        width: 100%; /* Asegura que no se desborde */
+        height: auto; /* Mantiene proporción */
+    }
+
+    /* Tamaño del botón y fuente optimizado para pantallas pequeñas */
+    .producto button, .boton-enlace {
+        padding: 10px; /* Reduce el espacio del botón */
+        font-size: 14px; /* Disminuye el tamaño de la fuente */
+    }
+}
